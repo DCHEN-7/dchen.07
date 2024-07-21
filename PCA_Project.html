@@ -38,10 +38,48 @@
 						<article class="post featured">
 							<header class="major">
 								<h2><a href="#"><u>E-Commerce Analysis</u></a></h2>
-								<h4>To be updated</h4>
+								<h4>In-Progress</h4>
 							</header>
 
+							<div class = "box">
+								<div class="box">
+								<h4><u>Objective</u>: First, provide a comprehensive breakdown of the different customer groups within this E-Commerce company.
+								Second, demonstrate how effective customer segmentation can be used provide valuable insight to product development teams and
+							resource allocation decision-making.   </h4>
+								</div>
+								 <div class = "box">
+									<p><b>Key Takeaways:</b></p>
+
+									<p><u>Monetary's Extreme Outlier</u> <br />
+										When building boxplots for the RFM metrics to identify outliers, we came across an extreme outlier for Monetary.
+										This outlier here has a monetary score of 77183.6, or alternatively, possesses a Z-score of 65.5.  <br />
+									
+										<br /><img src="images/CS_monetarybox.png" height="275"> <br />
+										<img src="images/CS_monoutlier1.png" height="175"> <br />
+										<img src="images/CS_monooutlier2.png" height="175"> <br /> </p>
+
+										<p><em>More takeaways will follow, see current progress in the meantime!</em> <br /> </p>
+									</div>
+
+									
+
 					</div>
+
+					<hr>
+					<h4>Building the customer segmentation model in Python...</h4>
+					<div class = "box">
+						<p>A customer segmentation workflow can often be summarized by 7 key steps (excluding sub-steps): <br />
+							1. Transform the data as necessary (e.g. aggregate, new fields, etc.) in order to obtain the RFM scores. <br />
+							2. Obtain the RFM scores and merge them to create one final RFM dataset  <br />
+							3. Clean the RFM dataset, identifying and adressing duplicates, null values, outliers, etc. <br />
+							4. Standarize the dataset (we'll use StandardScaler from SKLearn) <br />
+							5. Determine the optimal number of clustering groups (we'll use Elbow Method) <br />
+							6. Visualize the clusters in the manner most suitable for interpretation <br />
+							7. Interpret and contexualize the resulting model in terms of business operation & strategy  
+
+						</p>
+						</div>
+					
 
 				
 
