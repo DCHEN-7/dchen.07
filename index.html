@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic Page - Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Projects</a>
+					</header>
+				<!-- Nav -->
+				<nav id="nav">
+					<ul class="links">
+						<li class="active"><a href="index.html">Customer Segmentation</a></li>
+						<li><a href="PBI_Project.html">POWER BI - REAL ESTATE </a></li>
+						<li><a href="PBI_HR.html">POWER BI - HR </a></li>
+						<li><a href="index_LR.html">Linear Regression</a></li>
+						<li><a href="MR_Project.html">Excel</a></li>
+
+				</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+						<article class="post featured">
+							<header class="major">
+								<h2><a href="#"><u>E-Commerce Analysis</u></a></h2>
+							</header>
+
+							<div class = "box">
+								<div class="box">
+								<h4><u>Objective</u>: First, provide a comprehensive breakdown of the different customer groups within this E-Commerce company.
+								Second, demonstrate how effective customer segmentation can be used provide valuable insight to product development teams and
+							resource allocation decision-making.   </h4>
+								</div>
+								 <div class = "box">
+									<p><b>Key Takeaways:</b></p>
+
+									<p><u>Monetary's Extreme Outlier</u> <br />
+										When building boxplots for the RFM metrics to identify outliers, we came across an extreme outlier for Monetary.
+										This outlier here has a monetary score of 77183.6, or alternatively, possesses a Z-score of 65.5. Based on the staggering
+										amount of standard deviation, it almost looks like a data entry error. However, given that the dataset has already gone
+										through several cleaning workflows, its origins might not be so straightforward,
+										and it is worth investigating how this data point came to be. That being said, for our model's sake, we have to remove it as 
+										this point would easily cause our model to begin overfitting.  <br />
+									
+										<br /><img src="images/CS_monetarybox.png" height="275"> <br />
+										<img src="images/CS_monoutlier1.png" height="175"> <br />
+										<img src="images/CS_monooutlier2.png" height="175"> <br /> </p> 
+										<br />
+
+										<p><u>Optimal Number of Clusters</u> <br />
+											Based on the elbow method WCSS plot, we identify the inflection point at k=4, and therefore, our optimal number of
+											clusers is 4.  <br />
+
+											<img src="images/CS_Elbow.png" height="375"> <br />
+
+
+											<p><u>RFM Cluster Scores & Analysis</u> <br />
+												After building our segmentation model, we calculate the average RFM scores for each cluster group.<br />
+												<img src="images/CS_RFM_Dashboard.png" height="500"> <br />
+	
+												Kindly  remember that the recency metric is slightly inverted: <em>Recency</em> represents how <em>recently</em> they made their purchase by tracking the number of days
+												<u>since their last purchase</u>. In other words, a high recency score means many days have passed since their last purchase.
+												Similarly, a low recency score means they are recent customers.
+												The others are straightforward metrics, Frequency means how 
+													<em>frequently </em> they make purchases and Monetary means how <em>much</em> they're spending with their purchases. <br />
+
+											<br /> <p style="color:green;">Cluster 1</p> <p>Ranks low in recency, relatively high in frequency, and moderate in monetary. This cluster likely represents
+											the customers who are actively engaged with our products, but their monetary value suggests this group
+											also tends to make value-concious spending decisions. </p>
+
+											<br /> <p style="color:purple;">Cluster 2</p> <p>Ranks high in recency, low in frequency, and relatively low in monetary. 
+												This cluster likely represents the customers who were unsatifsied with our product and are actively disinterested in our current 
+											offerings and or promotional deals. </p>
+
+											<br /> <p style="color:orange;">Cluster 3</p> <p>Ranks low in recency, extremely high in frequency, and low in monetary. 
+												This cluster likely represents the customers who make purchases recently and regularly, but who strongly graviate towards
+											lower spending choices. For exmaple, regularly shopping for lower-priced items while keeping a keen eye for discounts or clearance deals. </p>
+
+											<br /> <p style="color:blue;">Cluster 4</p> <p>Ranks moderate in recency, low-moderate in frequency, and extremely high in monetary. 
+												This cluster likely represents our high-value customers who show strong interest in our expensive premimum products and 
+												are most willing to spend more money than any other customer group.   </p> <br />
+
+												<p><u>Product Development Team Recommendations</u> <br />
+											<p><em>More to follow soon!</em> <br /> </p>
+									</div>
+
+									
+
+					</div>
+
+					<hr>
+					<h4>Building the customer segmentation model in Python...</h4>
+					<div class = "box">
+						<p>A customer segmentation workflow can often be summarized by 7 key steps (excluding sub-steps): <br />
+							1. Transform the data as necessary (e.g. aggregate, new fields, etc.) in order to obtain the RFM scores. <br />
+							2. Obtain the RFM scores and merge them to create one final RFM dataset  <br />
+							3. Clean the RFM dataset, identifying and adressing duplicates, null values, outliers, etc. <br />
+							4. Standarize the dataset (we'll use StandardScaler from SKLearn) <br />
+							5. Determine the optimal number of clustering groups (we'll use Elbow Method) <br />
+							6. Visualize the clusters in the manner most suitable for interpretation <br />
+							7. Interpret and contexualize the resulting model in terms of business operation & strategy  
+
+						</p>
+						</div>
+					
+
+				
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Creative Commons</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

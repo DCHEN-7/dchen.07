@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic Page - Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Projects</a>
+					</header>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul class="links">
+						<li><a href="index.html">Customer Segmentation</a></li>
+						<li><a href="PBI_Project.html">POWER BI - REAL ESTATE </a></li>
+						<li><a href="PBI_HR.html">POWER BI - HR </a></li>
+						<li><a href="index_LR.html">Linear Regression</a></li>
+						<li class="active"><a href="MR_Project.html">Excel</a></li>
+
+				</nav>
+
+
+			</div>
+
+			<!-- Used Cars-->
+			<!-- Main -->
+			<div id="main">
+
+				<!-- Featured Post -->
+					<article class="post featured">
+						<header class="major">
+							
+							<h2><a href="#"><u>Used Cars Market</u> <br /></a></h2>
+						</a></h2>
+							<p>A Case Study on 24,199 Used Vehicles For Sale Within 25 km Proximity of Downtown Toronto. <br /></p>
+							<div class = "box">
+								<h4><u>Objective</u>: What does toronto's used car market look like for a roofing company with a budget of $60,000?
+								Which vehicles fit their business? Which vehicles can they buy?</h4>
+								<h6><u>Note</u>: The question of "which vehicle <em>should</em> they buy" would be best answered through
+									 a machine learning price prediction model, but that is currently out of my depth.</h6>
+								</div>
+							<html>
+							<body>
+								 <div class = "box">
+									<div class = "box">
+										<p><b>Summary:</b> <br />
+										Identified an actionable dataset subset to match vehicle necessities for a roofing company <br />
+										 Cleaned/Wrangled the data through Excel <br />
+										    ----Wrote a function to convert scraped gas usage data entries into an analytics friendly format <br />
+											Created a price distribution histogram for the larger vehicles subset <br />
+										 Created pivot charts illustrating market share by body type of vehicle <br />
+										 Wrote SQL queries to return the % of listings by body type within budget <br />
+										</p>
+									
+								
+									</div>
+								</div>
+							</body>
+							</html>
+						</header>
+						<h4><u>Objects of Interest: Gain insights and understanding of the used car market <br />from the perspective of an interested roofing company</u> <br /> </h4>
+					Here is the inital .csv, but where do we begin? <br />
+					<a href="#" class="image main"><img src="images/rawdata.PNG" alt="" /></a></small>
+
+					<p>Well, roofing companies want lots of space. So a good start is to clean and analyze our data for larger vehicles.
+					That being said how do we define larger vehicles? We have total of 31 unique body types. Since the number of unique body types is relatively small,
+				  we can manually research which vehicles are suitable. We define this set as the <em>larger vehicles</em>. </p>
+				  <a href="#" class="image main"><img src="images/LargerVehiclesSet.PNG" alt="" /></a>
+				  <hr>
+				<p>Since we want to focus only on these defined larger vehicles, let's create a subset of the inital data with which
+					we can then clean and begin to analyze... <br />
+					<p>
+
+						1. Delete the rows which held body types that were not part of our larger vehicle set <br />
+						2. Removed any duplicates through Excel's built in duplicate removal feature<br />
+						3. Remove any rows with <em>NULL</em> "Kilometers", "Price", "Body Type" since they are crucial pieces of information.<br />
+						4. Cleaned the gas consumption columns into simple integers, using the average value when given a range
+						<hr>
+						<p><code>I used VBA for task 4, but if the dataset were larger I'd likely use Python Pandas or SQL.
+						</code> <a href="#" class="image main"><img src="images/CleanGasUsage.PNG" alt="" /></a></p>
+						<hr>
+						<a href="#" class="image main"><img src="images/PriceSpread.PNG" alt="" /></a>
+						<hr>
+				
+
+					<p>With the subset data cleaned to a reasonable degree, we can then generate this dashboard focusing on market share, 
+						average price, and the purchasing power of our budget, all categorized by body type:<br />
+						<a href="#" class="image main"><img src="images/ExcelCompleteDashboard.PNG" alt="" /></a>
+						<h6>*The purchasing power percentages were calculated within MySQL through CTEs:</h6>
+						WITH cte_filtered AS (SELECT Body_Type, Price FROM used_cars_truck.price_data WHERE price <= 60000), <br />
+						cte_count AS (Select Body_Type, COUNT(Body_Type) AS "ListingsUnder60000" from cte_filtered group by Body_Type), <br />
+						cteTotal AS (Select Body_Type, COUNT(Body_Type) AS "TotalListings" from used_cars_truck.price_data group by Body_Type) <br />
+						SELECT cte_count.Body_Type, cte_count.ListingsUnder60000, cteTotal.TotalListings, (ListingsUnder60000/TotalListings) AS "Percentage Within Budget" from cte_count join cteTotal on cte_count.Body_Type = cteTotal.Body_Type; <h6>*Terrible for efficiency but was a great SQL exercise</h6>
+						<hr> 
+
+						<div class = "box">
+						<p> We see that there are two leading body types which dominate the market: "Truck" and "Crew Cab"
+							with a staggering 52.13% and 34.84%, respectively. Another way to see this disparity, group together all the larger vehicles outside of
+							 the top 2 and they together only make up 13.03% of the listings.</p>
+
+					<p>
+							Furthermore, even if we strip away percentages from the question, we see that "Truck" stands at the top with exactly 956 listings,
+							 still relatively far ahead of "Crew Cabs" following behind with 639;
+							yet the third highest body type, "Regular Cab", is practically a rare sighting with a listing total of 67.
+					</p>
+
+					<p>It is worth noting that not only does this analysis give us valuable insight into the current market of what we consider
+						used larger vehicles, but also that any body type class not named "Truck" or "Crew Cab" is not worth analyzing independently in this case study simply due to
+						the low number of data regarding them.
+					</div>
+						<div class = "box">
+							<p> In terms of the average price and purchasing power visualization, we see that the average price of Crew Cab's far exceed the rest of the body types. Through this visualization,
+								 we gain the insight that with our current
+								budget of $60,000, we can only consider a small portion of the Crew Cabs, specifically only 22.6% of the bottom-priced listings. Meanwhile for Trucks,
+								our purchasing power looks stronger with us having the budget to consider 55.1% of the total truck listings.</p>
+								
+								<p>With the remaining body types
+								of such low count value, the only thing we can really say is that our budget seems to cover the majority of the rare listings
+								 of vehicles not named "Crew Cab"
+								 or "Truck".</p>
+								 </div>
+						
+						
+
+	
+					</article>
+
+
+
+				<!-- Footer -->
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
