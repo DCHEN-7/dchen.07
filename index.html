@@ -153,7 +153,66 @@
 							7. Interpret and contexualize the resulting model in terms of business operation & strategy  
 
 						</p>
+
+						<p> Steps 1,4, and 5 are provided in detail below, with remaining steps posessessing less noteworthy code.</p>
+
+						<p> 1. <br />
+							
+							The inital dataset was given in tabular form, meaning each row corresponding to a transaction. This tabular nature meant that for
+							the recency metric, we were required to transform the dataset somehow such that each customerID only had 1 associated row. Furthermore,
+							that transaction row had to be most recent transaction. 		
+
+							<p><code>customers['rank'] = customers.sort_values(['CustomerID', 'Date']).groupby('CustomerID').cumcount() + 1 </code> <br />
+
+								<br /> <img src="images/CS_RecencyCumCount.png" height="275"> <br />
+							<br />This problem was solved by first sorting the dataframe by CustomerID and then by
+							Date within each CustomerID. Afterwards, we created a calculated field called 'rank' through the .cumcount() function, which allowed us to track each
+							transaction in sequence based on the sorted date. From here, it was just a matter of creating a new column 'recency' based on the number of elapsed time 
+							between the earliest transactions (those with rank value of 1) and the most recent transaction  (those with the highest rank value).
+							where 'rank' had a value of 1 (i.e. it was the first transaction). <br />
+
+							
+							 <br />
+
+							4 & 5. <br />
+
+							Step 4 & 5 was suprisingly tricky as we know for the downstream cluster analysis, we want to perform the predictive machine learning algorithm <em>KMeans</em>
+							on the standardized dataset. However, for business & strategy interpretations, we want the true values but with an added column representing the 
+							algorithm's cluster assignment. <br /> 
+							
+							<br /> The following codes creates two RFM dataframes, one standardized and one not, and then begins a loop to create
+							the WCSS scores for the elbow plot. Afterwards, we apply the <em>KMeans</em> algorithim to assign the cluster predictions and
+							calculate the mean RFM values within each cluster. From there, we achieve our desired results of a customer segmentation model with their
+							corresponding recency, frequency, and monetary scores.  <br />
+
+							<p><code>RFM_set_new[columns] = scaler.fit_transform(RFM_set_new[columns]) </code> <br />
+							<p><code>RFM_S = RFM_set_new.drop('CustomerID', axis=1)  </code> <br />
+							<p><code>RFM_Pre_S = RFM_df </code> <br />
+
+							<p><code>for k in range(1,10):<br />
+								kmeans = KMeans(n_clusters=k) <br />
+								kmeans.fit(RFM_S) <br />
+								wcss_list.append(kmeans.inertia_)</code> <br />
+
+								<p><code>kmeans = KMeans(n_clusters=4, random_state = 0) <br />
+									kmeans.fit(RFM_S)</code> <br />
+
+									<p><code>predictions = kmeans.predict(RFM_S) <br />
+										df_rfm = pd.DataFrame(RFM_Pre_S) <br />
+										df_rfm['cluster'] = predictions <br />
+										avg_cluster_df = df_rfm.groupby(['cluster'], as_index=False).mean() </code> <br />
+
+										<br /> <img src="images/CS_avgcluster_table.png" height="130"> <br />
+						</p>
 						</div>
+
+						<div class = "box">
+							This project was my first thorough attempt at applying a machine learning algorithim in a realistic business use case.
+							 I learned a lot and hopefully it's clear in my work that this field is something I'm truly passionate about.
+							<br /> Thank you for taking the time to take a look at my work!
+
+						</div>
+	
 					
 
 				
