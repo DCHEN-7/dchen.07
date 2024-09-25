@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>DCHEN Projects</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+						<h1>DENNY CHEN<br/>
+							</h1>
+						<p>Welcome to my portfolio! Enjoy your stay :)</p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Projects</a>
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">KMeans Clustering</a></li>
+							<li class="active"><a href="PCA.html">PCA</a></li>
+							<li><a href="PBI_HR.html">POWER BI</a></li>
+							<li><a href="linear_regression.html">Linear Regression</a></li>
+							<li><a href="PBI_Project_MR.html">Excel</a></li>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									
+									
+									<h2><a href="#"><u>Admissions Insight</u> <br /></a></h2>
+									<h6>A new presentation format, feedback is welcome!</h6>
+
+									<br />
+
+										<div class = "box">
+											<h4 style="color:goldenrod; text-align:left">Background</h4>
+											<p>Principal Component Analysis, or PCA for short, is a form of <em>unsupervised machine learning</em>
+												in which we apply a <em>change of basis</em> such that the dataset's greatest variances are emphasized, often
+												reducing noise and dimensionality as a result. <br />
+												<img src="images/PCA_1g.png" height="300">
+												<img src="images/PCA_2.png" height="300">
+
+												<div style="text-align: center; font-size: small;">
+													Simple example in R2.
+												  </div>
+
+												<br />
+												<br />
+												<p>From a non-technical standpoint, PCA is an algorithim used to identify the most crucial
+												variables within a dataset—and simultaneously the most redundant ones. It is worth noting that while the algorithim can introduce
+												interpretability issues, it is still nevertheless the case that a dataset of orginally 15 variables could be reduced to just 5 in the event that 
+												PCA exhibited the prescence of 10 redundant factors. <br /></p>
+
+
+
+
+
+											</p>
+											
+											
+											</div>
+
+								</a> <br/>
+								
+									<html>
+									<body>
+										<div class = "box">
+
+											<h4 style="color:goldenrod; text-align:left">Objective</h4> 
+
+
+										<p>Given a dataset on Graduate School Admittance for a particular program, the goal is to gain an understanding of <em>exactly</em> how 
+											competitive entry into the program is as well as identify key areas candidates should prioritize and the qualities 
+											most highly valued by the admissions committee.</p>
+										
+										</div>
+
+										<div class = "box">
+
+											<h4 style="color:goldenrod; text-align:left">Dataset Context</h4> 
+
+
+										<p>Our dataset has 9 total columns, including the primary key "Serial No." and the target variable "Chance to Admit".<br /><br />
+
+											Canidate Serial Number <br />
+										
+											Graduate Record Examinations Scores ( out of 340 )<br />
+
+											Test of English as a Foreign Language Scores ( out of 120 )
+											<br />
+											University Rating ( out of 5 )
+											<br />
+											Statement of Purpose Strength ( out of 5 ) <br /> 
+											Letter of Recommendation Strength ( out of 5 )
+											<br />
+											Cumulative Grade Point Average ( out of 10 )
+											<br />
+											Research Experience ( either 0 or 1 )
+											<br />
+											Chance of Admit ( ranging from 0 to 1 ).</p>
+										
+										</div>
+
+										<div class = "box">
+
+											<h4 style="color:goldenrod; text-align:left">Key Takeaways</h4>
+
+
+
+											<p><u>CGPA is the most directly correlated with Chance of Admit</u>
+
+												<p>CGPA is the feature most directly correlated with the target variable, with a correlation coefficient of 0.87.
+													The next subsequently correlated features are GRE score and TOEFL score, with a correlational coefficient of 0.8 and 0.79, respectively. 
+													<br /><br />
+													<img src="images/PCA_heatmap.png" height="350"><br /><br />
+
+													Concluding the investigation at this point would suggest that applicants, especially domestic ones who don't need the TOEFL (0.79), should prioritize their CGPA (0.87) and 
+													GRE (0.8) scores heavily, allocate a reasonable amount of time towards the qualitative aspects like Letter of Recommendation (0.67)
+													and State of Purpose (0.68), and consider gaining research experience (0.55) as an entirely optional asset. <br /><br />
+
+													While these suggestions are technically "data-driven", they would, in reality, be <strong>terrible</strong> advice and truly 
+									                illustrates the importance of exercising caution when solely relying on data to drive decision-making. <br /><br /> 
+
+													<u>PCA Clustering & Analysis </u> <br />
+
+													<p>Through the algorithim, we obtained two new axes we'll refer to as PC1 (Principal Component 1) and PC2 (Principal Component 2). 
+														Together, this two dimensional measure accounts for 79.97% of the variances within our data, despite having 6 less dimensions than our pre-transformed dataset. <br />
+
+														<br /> Again, it is worth noting that there are some interpretability asterisks at play here since the PCA algorithim, colloquially put, "Frankensteins" 
+														variables together to generate PC1 and PC2. Nevertheless, PCA still provides a far more accurate representation of graduate school admission trends
+														 compared to the correlation heatmap."<br /> <br />
+														 
+
+
+
+														  
+		 
+														 <img src="images/PCA_sp.png" height="490"><br /><br />
+
+														 The PC1 axis can be interpeted as <em>Academic Ability</em>, with the greatest contributions being CGPA (-0.42), GRE Score (-0.40), TOEFL Score (-0.40), and University Rating (-0.39).
+														  The stronger the canidate's academic ability (i.e competitive CGPA, high GRE, etc.), the further left they lie on the PC1 axis. <br /><br />
+														  
+														  Moreover, they are all negative and are relatively
+														  similar in magnitude, indicating that a very negative PC1 value implies competitive gpa, high GRE & TOEFL score, and a prestigious university.
+														  However, it is worth noting CGPA carries slightly more weight amongst the factors.   <br /> <br />
+
+														 The PC2 axis, on the other hand, is a reflection of the qualitative aspects of the canidates application. More specifically, PC2 represents the
+														 combination of research experience, letter of recommendation strength, and statement of purpose strength. <br /> <br />
+
+														 However, we have to be extra careful with the interpretation of PC2 as 
+														 letter of recommendation (+0.45) and statement of purpose (+0.35) are rated <strong>positively</strong> while conversely 
+														 research experience is weighted <strong>negatively</strong> (-0.72) and nearly double in magnitude of LOR and SOP.
+														Meaning, canidates with no research experience but high scores on LOR and SOP would be placed towards the top of the grid;
+														canidates with research experience but low scores on LOR and SOP would be placed towards the bottom of the grid; and canidates with a balance of
+														the three will hover near 0. 
+														 
+														 <br /> <br />
+
+														 <img src="images/PCA_sp_2.png" height="500"><br /><br />
+
+														 As one would expect, those with 90%+ chances of being admitted are those with strong academic ability and a overall balanced portfolio of 
+														 statement of purpose, letter of recommendation, and prior research experience. I will indicate these canidates
+														 as zone 1 applicants (annoted as "1"). However, what is more interesting is that within this golden zone, there are numerous
+														 canidates with negative PC2 scores which as we recall, means their research experience provided stronger contribution towards 
+														 their application than the statement of purpose and letter of intent. And while of course this observation is under the assumption that
+														 the canidate scored great academically, this analysis nevertheless highlights the significance of prior research experience despite having
+														 only a correlational coefficient of 0.55. <br /><br />
+
+														 Beyond the zone 1, we have what I called the "Reccomended Academically Competitive" vertical as well as zone 2 applicants, great canidates second
+														 to only the strongest applicants we have. Like it's name suggest, the vertical represents the point in which canidates'
+														 academic ability is no longer considered competitive. Furthermore, as we can see, having a strong academic portfolio is a primary criteria, 
+														 and thus the majority of the applicants beyond this vertical have a low (< 60%) chance of being admitted. That being said, there are visibly a handful
+														 of applicants not meeting the vertical and yet still being given 60%-80% which suggests that the admissions committee must be willing to substitute
+														 a lesser competitive academic portfolio for a stellar set of statement of purpose, recommendataion letters, and prior research experience. 
+														 
+														 <br /><br />
+														 Zone 2 is the set of applicants who are strong academically, not within the 90th percentile however, but who have also maximized the 
+														 qualitative aspects of their canidacy as much as possible. For many students, academic ability is influenced by numerous socio-ecnomic factors and thus
+														 zone 2 applicants are in some ways greater than zone 1 applicants. Students with lower household income for example, may have to work 20 hours a week 
+														 to support their tuition payments thus resulting in slightly lower CGPA or GRE or perhaps chose a 
+														 lower ranked school offering financial scholarships despite recieving offers from more prestigious schools.
+
+														 <br /><br />
+	
+														 
+
+														For reference, I've included the loadings table below as well.
+														 
+														 <br /><br />
+
+														 <img src="images/PCA_loadings.png" height="120"><br /><br />
+													
+												</p>
+										</div>
+
+										<div class = "box">
+
+											<h4 style="color:goldenrod; text-align:left">End</h4> 
+
+
+										<p>Thank you for taking the time to look at my work! If you've never heard of Principal Component Analysis before, I tried to include many non-technical explanations
+										 as possible and hope overall it was still digestable! If you're a seasoned PCA veteran, I hope I've given you a new use case for this algorthim!  
+										</p>
+										
+										</div>
+
+
+										 
+													
+
+												 </p> 
+
+												
+											</div>
+											</div>
+												<p><br/>
+
+
+										
+										</div>
+									</body>
+
+
+									</html>
+								</header>
+								
+
+
+
+						<!-- Footer -->
+
+					</div>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Creative Commons License</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
