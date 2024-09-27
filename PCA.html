@@ -135,27 +135,33 @@
 										
 										</div> <br />
 
+
 										<div class = "box">
 
-											<h4 style="color:goldenrod; text-align:left">Key Takeaways</h4>
+											<h4 style="color:goldenrod; text-align:left">Key Takeaway 1: </h4>
+											<h4 style="color:darkslategrey; text-align:left"> CPGa is the most directly correlated with the target variable</h4> <br />
 
 
+											<p>CGPA is the feature most directly correlated with the target variable, with a correlation coefficient of 0.87.
+												The next subsequently correlated features are GRE score and TOEFL score, with a correlational coefficient of 0.8 and 0.79, respectively. 
+												<br /><br />
+												<img src="images/PCA_heatmap.png" height="350"><br /><br />
 
-											<p><u>CGPA is the most directly correlated with Chance of Admit</u>
+												Concluding the investigation at this point would suggest that applicants, especially domestic ones who don't need the TOEFL (0.79), should prioritize their CGPA (0.87) and 
+												GRE (0.8) scores heavily, allocate a reasonable amount of time towards the qualitative aspects like Letter of Recommendation (0.67)
+												and State of Purpose (0.68), and consider gaining research experience (0.55) as an entirely optional asset. <br /><br />
 
-												<p>CGPA is the feature most directly correlated with the target variable, with a correlation coefficient of 0.87.
-													The next subsequently correlated features are GRE score and TOEFL score, with a correlational coefficient of 0.8 and 0.79, respectively. 
-													<br /><br />
-													<img src="images/PCA_heatmap.png" height="350"><br /><br />
+												While these suggestions are technically "data-driven", they would, in reality, be <strong>terrible</strong> advice and truly 
+												illustrates the importance of exercising caution when solely relying on data to drive decision-making. <br /><br /> 
+										
+										</div> <br />
 
-													Concluding the investigation at this point would suggest that applicants, especially domestic ones who don't need the TOEFL (0.79), should prioritize their CGPA (0.87) and 
-													GRE (0.8) scores heavily, allocate a reasonable amount of time towards the qualitative aspects like Letter of Recommendation (0.67)
-													and State of Purpose (0.68), and consider gaining research experience (0.55) as an entirely optional asset. <br /><br />
+										<div class = "box">
 
-													While these suggestions are technically "data-driven", they would, in reality, be <strong>terrible</strong> advice and truly 
-									                illustrates the importance of exercising caution when solely relying on data to drive decision-making. <br /><br /> 
+											<h4 style="color:goldenrod; text-align:left">Key Takeaway 2: </h4>
+											<h4 style="color:darkslategrey; text-align:left"> PCA Clusering & Analysis</h4> <br />
 
-													<u>PCA Clustering & Analysis </u> <br />
+
 
 													<p>Through the algorithim, we obtained two new axes we'll refer to as PC1 (Principal Component 1) and PC2 (Principal Component 2). 
 														Together, this two dimensional measure accounts for 79.97% of the variances within our data, despite having 6 less dimensions than our pre-transformed dataset. <br />
