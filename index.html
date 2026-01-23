@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Generic Page - Massively by HTML5 UP</title>
+		<title>DCHEN Projects</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -15,216 +15,290 @@
 	<body class="is-preload">
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+						<h1>DENNY CHEN<br/>
+							</h1>
+						<p>Welcome to my portfolio! Enjoy your stay :)</p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
 
 				<!-- Header -->
 					<header id="header">
 						<a href="index.html" class="logo">Projects</a>
 					</header>
-				<!-- Nav -->
-				<nav id="nav">
-					<ul class="links">
-						<li class="active"><a href="index.html">KMeans Clustering</a></li>
-						<li><a href="PCA.html">PCA</a></li>
-						<li><a href="PBI_HR.html">POWER BI </a></li>
-						<li><a href="linear_regression.html">Linear Regression</a></li>
-						<li><a href="PBI_Project_MR.html">Excel</a></li>
 
-				</nav>
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">PCA</a></li>
+							<li><a href="KMeans.html">KMeans Clustering</a></li>
+							<li><a href="PBI_HR.html">POWER BI</a></li>
+							<li><a href="linear_regression.html">Linear Regression</a></li>
+							<li><a href="PBI_Project_MR.html">Excel</a></li>
+					</nav>
 
 				<!-- Main -->
 					<div id="main">
 
 						<!-- Featured Post -->
-						<article class="post featured">
-							<header class="major">
-								<h2><a href="#"><u>E-Commerce Analysis</u></a></h2>
-							</header>
-
-							<div class = "box">
-								<div class="box">
-								<h4><u>Objective</u>: First, provide a comprehensive breakdown of the different customer groups within this E-Commerce company.
-								Second, demonstrate how effective customer segmentation can be used provide valuable insight to product development teams and
-							resource allocation decision-making.   </h4>
-								</div>
-								 <div class = "box">
-									<p><b>Key Takeaways:</b></p>
-
-									<p><u>Monetary's Extreme Outlier</u> <br />
-										When building boxplots for the RFM metrics to identify outliers, we came across an extreme outlier for Monetary.
-										This outlier here has a monetary score of 77183.6, or alternatively, possesses a Z-score of 65.5. Based on the staggering
-										amount of standard deviation, it almost looks like a data entry error. However, given that the dataset has already gone
-										through several cleaning workflows, its origins might not be so straightforward,
-										and it is worth investigating how this data point came to be. That being said, for our model's sake, we have to remove it as 
-										this point would easily cause our model to begin overfitting.  <br />
+							<article class="post featured">
+								<header class="major">
 									
-										<br /><img src="images/CS_monetarybox.png" height="275"> <br />
-										<img src="images/CS_monoutlier1.png" height="175"> <br />
-										<img src="images/CS_monooutlier2.png" height="175"> <br /> </p> 
-										<br />
+									
+									<h2><a href="#"><u>Admissions Insight</u> <br /></a></h2>
+									<h6>A new presentation format, feedback is welcome!</h6> <br />
 
-										<p><u>Optimal Number of Clusters</u> <br />
-											Based on the elbow method WCSS plot, we identify the inflection point at k=4, and therefore, our optimal number of
-											clusers is 4.  <br />
+									<div class = "box">
+										<h4 style="color:goldenrod; text-align:left">Project Motivation</h4>
+										<p>I’m a data analyst now, but for much of my life I was a math teacher. I was a part-time math tutor all throughout undergrad, had my own classroom at a private school post-grad,
+											 and even did a student-teacher placement at my old high school (try managing teenagers when pictures of your 17-year old self are publicly on display ha!). My strong suit was building strong 
+											 connections with my students and actively helping them figure out their post-secondary goals and careers. I found a lot of passion in sharing the lesser known aspects of university 
+											 applications— from how to use the publicly available admissions data to the importance of well rounded applications.
+											  And while I no longer teach as much, this project is an extension of that passion as we incorporate data science concepts into studying the admission rates of
+											 a fictional graduate program dataset. Precisely as I used to tell my students, we will see the importance of being a well-rounded applicant and the value of utilizing data to your advantage.  <br />
 
-											<img src="images/CS_Elbow.png" height="375"> <br />
+											</div>
+									<br />
+
+									
+										<div class = "box">
+											<h4 style="color:goldenrod; text-align:left">Background</h4>
+											<p>Principal Component Analysis, or PCA for short, is a form of <em>unsupervised machine learning</em>
+												in which we apply a <em>change of basis</em> such that the dataset's greatest variances are emphasized, often
+												reducing noise and dimensionality as a result. <br />
+												<img src="images/PCA_1g.png" height="300">
+												<img src="images/PCA_2.png" height="300">
+
+												<div style="text-align: center; font-size: small;">
+													Simple example in R2.
+												  </div>
+
+												<br />
+												<br />
+												<p>From a non-technical standpoint, PCA is an algorithim often used to identify the most crucial
+												variables within a dataset—and simultaneously the most redundant ones. It is worth noting that while the algorithim can introduce
+												interpretability issues, it is still nevertheless the case that a dataset of orginally 15 variables could be reduced to just 5 in the event that 
+												PCA exhibited the prescence of 10 redundant factors. <br /></p>
 
 
-											<p><u>RFM Cluster Scores & Analysis</u> <br />
-												After building our segmentation model, we calculate the average RFM scores for each cluster group.<br />
-												<img src="images/CS_RFM_Dashboard.png" height="500"> <br />
 
-												<h6>Note: On the plots the clusters are labelled 0,1,2,3 but we will be referring to them as 1,2,3,4.</h6>
-	
-												<br/> Kindly  remember that the recency metric is slightly inverted: <em>Recency</em> represents how <em>recently</em> they made their purchase by tracking the number of days
-												<u>since their last purchase</u>. In other words, a high recency score means many days have passed since their last purchase.
-												Similarly, a low recency score means they are recent customers.
-												The others are straightforward metrics, Frequency means how 
-													<em>frequently </em> they make purchases and Monetary means how <em>much</em> they're spending with their purchases. <br />
-
-											<br /> <p style="color:green;">Cluster 1</p> <p>Ranks low in recency, relatively high in frequency, and moderate in monetary. This cluster likely represents
-											the customers who are actively engaged with our products, but their monetary value suggests this group
-											also tends to make value-concious spending decisions. </p>
-
-											<br /> <p style="color:purple;">Cluster 2</p> <p>Ranks high in recency, low in frequency, and relatively low in monetary. 
-												This cluster likely represents the customers who were unsatifsied with our product and are actively disinterested in our current 
-											offerings and or promotional deals. </p>
-
-											<br /> <p style="color:orange;">Cluster 3</p> <p>Ranks low in recency, extremely high in frequency, and low in monetary. 
-												This cluster likely represents the customers who make purchases recently and regularly, but who strongly graviate towards
-											lower spending choices. For exmaple, regularly shopping for lower-priced items while keeping a keen eye for discounts or clearance deals. </p>
-
-											<br /> <p style="color:blue;">Cluster 4</p> <p>Ranks moderate in recency, low-moderate in frequency, and extremely high in monetary. 
-												This cluster likely represents our high-value customers who show strong interest in our expensive premimum products and 
-												are most willing to spend more money than any other customer group.   </p> <br />
-
-												<p><u>Product Development Team Recommendations</u> <br />
-											<p><em>1. Product Bundles</em> <br /> </p>
-
-											<p>Targeting cluster 1, we could research into the top 3 most commonly purchased items within this group and then offer a 
-												bundle purchase promotion where one item from the premier group is paired with a <em>slightly</em> less commonly bought items within this group. 
-												The goal here is not trying to get this consumer group to purchase a new product, but rather incentivize them to
-												purchase a product they typically would wait longer on. Additionally, based on the higher monetary score, we could experiment
-												with item pricing combinations within this group to determine the optimal selling point.
-
-												<p><em>2. Root Cause Analysis</em> <br /> </p>
-
-												<p>Targeting cluster 2, we could designate a team to research each and every one of the purchase orders made by cluster 2
-													and identify patterns and trends which correlate or perhaps even provide a causal explanation regarding why the customer
-													was disinterested in returning for another purchase.
-
-													<p><em>3. Engagement Products</em> <br /> </p>
-
-													<p>Targeting cluster 3, we could design exclusive limited-time offer thank them for being a loyal customer, and then additionally
-														provide discounts on typically higher-priced items they otherwise normally wouldn't consider due to the cost. The tricky
-														part to this strategy, however, is that even with thorough research, it would be difficult to determine which products
-														this consumer group has strayed away from due to complete disinterest versus which products have been shelved simply
-														due to its price. If we had the right cookies enabled on our platform then it could be possible to identify items in which
-														the user has placed into their cart, but not purchased as a guideline. 
-
-														<p><em>4. VIP Programs</em> <br /> </p>
-
-														<p>Targeting cluster 4, we could implement extra privileges to this consumer group which enhances their 
-															customer experience and or provides a sense of exclusivity. For example, we could borrow from Artizia's
-															"Clientele" program and slowly rollout the newest and best-selling products in waves, with this consumer group
-															being first-in-line. Either way, some form of promotional offer which facilities a strong sense of pride
-															within the customer.
 
 
 											</p>
-									</div>
+											
+											
+											</div>
 
-									
+								</a> <br/>
+								
+									<html>
+									<body>
+										<div class = "box">
+
+											<h4 style="color:goldenrod; text-align:left">Objective</h4> 
+
+
+										<p>Given a dataset on Graduate School Admittance for a particular program, the goal is to gain an understanding of <em>exactly</em> how 
+											competitive entry into the program is as well as identify key areas candidates should prioritize and the qualities 
+											most highly valued by the admissions committee.</p>
+										
+										</div> <br />
+
+										<div class = "box">
+
+											<h4 style="color:goldenrod; text-align:left">Dataset Context</h4> 
+
+											
+
+
+										<p>Our dataset has 9 total columns, including the primary key "Serial No." and the target variable "Chance to Admit".<br /><br />
+
+											Canidate Serial Number <br />
+										
+											Graduate Record Examinations Scores ( out of 340 )<br />
+
+											Test of English as a Foreign Language Scores ( out of 120 )
+											<br />
+											University Rating ( out of 5 )
+											<br />
+											Statement of Purpose Strength ( out of 5 ) <br /> 
+											Letter of Recommendation Strength ( out of 5 )
+											<br />
+											Cumulative Grade Point Average ( out of 10 )
+											<br />
+											Research Experience ( either 0 or 1 )
+											<br />
+											Chance of Admit ( ranging from 0 to 1 ).</p>
+
+											<p>Sourced from Kaggle.</p>
+										
+										</div> <br />
+
+
+										<div class = "box">
+
+											<h4 style="color:goldenrod; text-align:left">Key Takeaway 1: </h4>
+											<h4 style="color:darkslategrey; text-align:left"> CPGa is the most directly correlated with the target variable</h4> <br />
+
+
+											<p>CGPA is the feature most directly correlated with the target variable, with a correlation coefficient of 0.87.
+												The next subsequently correlated features are GRE score and TOEFL score, with a correlational coefficient of 0.8 and 0.79, respectively. 
+												<br /><br />
+												<img src="images/PCA_heatmap.png" height="350"><br /><br />
+
+												Concluding the investigation at this point would suggest that applicants, especially domestic ones who don't need the TOEFL (0.79), should prioritize their CGPA (0.87) and 
+												GRE (0.8) scores heavily, allocate a reasonable amount of time towards the qualitative aspects like Letter of Recommendation (0.67)
+												and State of Purpose (0.68), and consider gaining research experience (0.55) as an entirely optional asset. <br /><br />
+
+												While these suggestions are technically "data-driven", they would, in reality, be <strong>terrible</strong> advice and truly 
+												illustrates the importance of exercising caution on surface level or exploratory (compared to explanatory) analysis. <br /><br /> 
+										
+										</div> <br />
+
+										<div class = "box">
+
+											<h4 style="color:goldenrod; text-align:left">Key Takeaway 2: </h4>
+											<h4 style="color:darkslategrey; text-align:left"> PCA Clusering & Analysis</h4> <br />
+
+
+
+													<p>Through the algorithim, we obtained two new axes we'll refer to as PC1 (Principal Component 1) and PC2 (Principal Component 2). 
+														Together, this two dimensional measure accounts for 79.97% of the variances within our data, despite having 6 less dimensions than our pre-transformed dataset. <br />
+
+														<br /> Again, it is worth noting that there are some interpretability asterisks at play here since the PCA algorithim, colloquially put, "Frankensteins" 
+														variables together to generate PC1 and PC2. Nevertheless, PCA still provides a far more accurate representation of graduate school admission trends
+														 compared to the correlation heatmap."<br /> <br />
+														 
+
+
+
+														  
+		 
+														 <img src="images/PCA_sp.png" height="490"><br /><br />
+
+														 The PC1 axis can be interpeted as <em>Academic Ability</em>, with the greatest contributions being CGPA (-0.42), GRE Score (-0.40), TOEFL Score (-0.40), and University Rating (-0.39).
+														  The stronger the canidate's academic ability (i.e competitive CGPA, high GRE, etc.), the further left they lie on the PC1 axis. <br /><br />
+														  
+														  Moreover, they are all negative and are relatively
+														  similar in magnitude, indicating that a very negative PC1 value implies competitive gpa, high GRE & TOEFL score, and a prestigious university.
+														  Notably, CGPA carries only slightly more weight (-0.42) among the factors compared to GRE (-0.40) and University Rating (-0.39). This observation suggests that the admissions committee 
+														  demonstrates the common heuristic acknowledgement of "GPA forgiveness" towards applicants applying from potentially more academically rigorious instituions (and thus lower cGPA on average),
+														  as typically within grad programs one would expect CGPA to significantly outweigh the University Rating.  <br /> <br />
+
+														 The PC2 axis, on the other hand, is a reflection of the qualitative aspects of the canidates application. More specifically, PC2 represents the
+														 combination of letter of recommendation strength, statement of purpose strength, and previous research experience. <br /> <br />
+
+														 However, we have to be extra careful with the interpretation of PC2 as 
+														 letter of recommendation (+0.45) and statement of purpose (+0.35) are rated <strong>positively</strong> while conversely 
+														 research experience is weighted <strong>negatively</strong> (-0.72) and nearly double in magnitude of LOR and SOP.
+														Meaning, canidates with no research experience but high scores on LOR and SOP would be placed towards the top of the grid;
+														canidates with research experience but low scores on LOR and SOP would be placed towards the bottom of the grid; and canidates with a balance of
+														the three will hover near 0. 
+														 
+														 <br /> <br />
+
+														 <img src="images/PCA_sp_2.png" height="500"><br /><br />
+
+														 Those with 90%+ chances of being admitted conglomerate to the left-most middle region, and are those with strong academic ability and a overall balanced portfolio of 
+														 statement of purpose, letter of recommendation, and prior research experience. I will indicate these canidates
+														 as zone 1 applicants (annoted as "1") in the sense that they are "no-brainers" in being admitted. However, what is more interesting is that within this golden zone, there are numerous
+														 canidates with negative PC2 scores which as we recall, means their research experience provided stronger contribution towards 
+														 their application than the statement of purpose and letter of intent—and still have a 90%+ chance of admittance. And while of course this observation is within the context that
+														 the canidate already scored great academically, this analysis nevertheless highlights the significance of prior research experience despite having
+														 only a correlational coefficient of 0.55. <br /><br />
+
+														 Additionally, beyond the zone 1, we have what I called the "Reccomended Academically Competitive" vertical as well as zone 2 applicants, great canidates second
+														 to only the strongest applicants we have. Like it's name suggest, the vertical represents the point in which canidates'
+														 academic ability is no longer considered competitive. Furthermore, as we can see, having a strong academic portfolio is a primary criteria, 
+														 and thus the majority of the applicants beyond this vertical have a low (< 60%) chance of being admitted. That being said, there are visibly a handful
+														 of applicants not meeting the vertical and yet still being given 60%-80% which suggests that the admissions committee must be willing to substitute
+														 a lesser competitive academic portfolio for a stellar set of statement of purpose, recommendation letters, and prior research experience. 
+														 
+														 <br /><br />
+														 Zone 2 is the set of applicants who are strong academically, not within the 90th percentile however, but who have also maximized the 
+														 qualitative aspects of their canidacy as much as possible. For many students, academic ability is influenced by numerous socio-ecnomic factors and thus
+														 zone 2 applicants are in some ways greater than zone 1 applicants. Students with lower household income for example, may have to work 20 hours a week 
+														 to support their tuition payments thus resulting in slightly lower CGPA or GRE or perhaps chose a 
+														 lower ranked school offering financial scholarships despite recieving offers from more prestigious schools. That being said, within this zone 2 
+														 the admittance percentages are still 70%+.
+
+														 <br /><br />
+
+														 In conclusion, PCA has shown that this graduate program strongly values an excellent academic history in the sense that if you are within the 
+														 90th percentile of academic ability, you are essentially automatically given a 80%+ of admittance. Include a respectable personal statement, 
+														 letter of recommendation, and previous research experience too, and you are a lock-in for the program. However, the analysis also shows that students
+														 with less extraordinary academic ability can still have a strong odds with the additions of a strong personal statement, recommendation letters, and 
+														 previous research experience, preferring a balanced combination of the three rather than favorable scores on only one side. 
+														 <br /><br /> 
+
+											
+
+														 <p>Here is simple diagram that summarizes the key results: </p>
+														 <p>
+														 <img src="images/CanidateAdmissionDiagram.png" height="500"><br /><br /> </p>
+	
+														 
+
+														For those who want to see the complete loadings table, I've included it below here.
+														 
+														 <br /><br />
+
+														 <img src="images/PCA_loadings.png" height="120"><br /><br />
+													
+												</p>
+										</div> <br />
+
+										<div class = "box">
+
+											<h4 style="color:goldenrod; text-align:left">End</h4> 
+
+
+										<p>Thank you for taking the time to look at my work! I'm trying out a new format where I leave out process documentation
+											 in favor of a more concise showcase of the results and analysis. That is, I left out the code and snippets of my Jupyter notebook
+											 and instead focused more on the exposition of the results and providing some theory background. Feedback is welcome! <br /><br />
+											
+											If you've never heard of Principal Component Analysis before, I tried to include many non-technical explanations
+										 as possible and hope overall it was still digestable! If you're a seasoned PCA veteran, I hope I've given you a new use case for this algorthim!
+										 Nevertheless, your time and attention means a lot, thank you, and I hope you have yourself a great day.  
+										</p>
+										
+										</div>
+
+
+										 
+													
+
+												 </p> 
+
+												
+											</div>
+											</div>
+												<p><br/>
+
+
+										
+										</div>
+									</body>
+
+
+									</html>
+								</header>
+								
+
+
+
+						<!-- Footer -->
 
 					</div>
 
-					<hr>
-					<h4>Building the customer segmentation model in Python...</h4>
-					<div class = "box">
-
-						<p>Here is the inital CSV given:</p>
-						<p><img src="images/CS_initalcsv.png" height="175"></p>
-						<br />
-						<p>The customer segmentation workflow we implmemented can essentially be summarized in the following 7 key steps (excluding sub-steps): <br />
-							1. Transform the data as necessary (e.g. aggregate, new fields, etc.) in order to obtain the RFM scores. <br />
-							2. Obtain the RFM scores and merge them to create one final RFM dataset  <br />
-							3. Clean the RFM dataset, identifying and adressing duplicates, null values, outliers, etc. <br />
-							4. Standarize the dataset (we'll use StandardScaler from SKLearn) <br />
-							5. Determine the optimal number of clustering groups (we'll use Elbow Method) <br />
-							6. Visualize the clusters in the manner most suitable for interpretation <br />
-							7. Interpret and contexualize the resulting model in terms of business operation & strategy  
-
-						</p>
-
-						<p> Steps 1,4, and 5 are provided in detail below, with remaining steps posessessing less noteworthy code.</p>
-
-						<p> 1. <br />
-							
-							The inital dataset was given in tabular form, meaning each row corresponding to a transaction. This tabular nature meant that for
-							the recency metric, we were required to transform the dataset somehow such that each customerID only had 1 associated row. Furthermore,
-							that transaction row had to be most recent transaction. 		
-
-							<p><code>customers['rank'] = customers.sort_values(['CustomerID', 'Date']).groupby('CustomerID').cumcount() + 1 </code> <br />
-
-								<br /> <img src="images/CS_RecencyCumCount.png" height="275"> <br />
-							<br />This problem was solved by first sorting the dataframe by CustomerID and then by
-							Date within each CustomerID. Afterwards, we created a calculated field called 'rank' through the .cumcount() function, which allowed us to track each
-							transaction in sequence based on the sorted date. From here, it was just a matter of creating a new column 'recency' based on the number of elapsed time 
-							between the earliest transactions (those with rank value of 1) and the most recent transaction  (those with the highest rank value).
-							where 'rank' had a value of 1 (i.e. it was the first transaction). <br />
-
-							<br /> The frequency and monetary metrics were much easier calculations to be had. <br />
-							
-							 <br />
-
-							4 & 5. <br />
-
-							Step 4 & 5 was suprisingly tricky as we know for the downstream cluster analysis, we want to perform the predictive machine learning algorithm <em>KMeans</em>
-							on the standardized dataset. However, for business & strategy interpretations, we want the true values but with an added column representing the 
-							algorithm's cluster assignment. <br /> 
-							
-							<br /> The following codes creates two RFM dataframes, one standardized and one not, and then begins a loop to create
-							the WCSS scores for the elbow plot. Afterwards, we apply the <em>KMeans</em> algorithim to assign the cluster predictions and
-							calculate the mean RFM values within each cluster. From there, we achieve our desired results of a customer segmentation model with their
-							corresponding recency, frequency, and monetary scores.  <br />
-
-							<p><code>RFM_set_new[columns] = scaler.fit_transform(RFM_set_new[columns]) </code> <br />
-							<p><code>RFM_S = RFM_set_new.drop('CustomerID', axis=1)  </code> <br />
-							<p><code>RFM_Pre_S = RFM_df </code> <br />
-
-							<p><code>for k in range(1,10):<br />
-								kmeans = KMeans(n_clusters=k) <br />
-								kmeans.fit(RFM_S) <br />
-								wcss_list.append(kmeans.inertia_)</code> <br />
-
-								<p><code>kmeans = KMeans(n_clusters=4, random_state = 0) <br />
-									kmeans.fit(RFM_S)</code> <br />
-
-									<p><code>predictions = kmeans.predict(RFM_S) <br />
-										df_rfm = pd.DataFrame(RFM_Pre_S) <br />
-										df_rfm['cluster'] = predictions <br />
-										avg_cluster_df = df_rfm.groupby(['cluster'], as_index=False).mean() </code> <br />
-
-										<br /> <img src="images/CS_avgcluster_table.png" height="130"> <br />
-
-										
-						</p>
-						</div>
-
-						<div class = "box">
-							This project was my first thorough attempt at applying a machine learning algorithim in a realistic business use case.
-							 I learned a lot and hopefully it's clear in my work that this field is something I'm truly passionate about.
-							<br /> Thank you for taking the time to take a look at my work!
-
-						</div>
-	
-					
-
-				
-
 				<!-- Copyright -->
 					<div id="copyright">
-						<ul><li>&copy; Creative Commons</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+						<ul><li>&copy; Creative Commons License</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
 					</div>
 
 			</div>
